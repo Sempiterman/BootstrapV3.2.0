@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botón de Carga - Acordeón</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+  
+  
+  <div class="container">  
+    <h3>Botón de carga y acordeones</h3>
+
+    <div class="panel-group">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#agregar" aria-expanded="true">
+                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Agregar usuario
+                </a>
+            
+          </h4>
+        </div>
+
+        <div id="agregar" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <form id="formulario">
+
+          <div class="form-group">
+              <label for="nombre">Nombre de usuario</label>
+              <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingresa el nombre">
+          </div>
+
+          <button type="button" id="BotonGuardar" data-loading-text="Guardando..." class="btn btn-primary" autocomplete="off">
+            Guardar
+          </button>
+
+                </form>
+          </div>
+        </div>
+        
+      </div>
+
+      
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" href="#buscar" aria-expanded="false">
+             <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar usuario
+            </a>
+          </h4>
+        </div>
+
+        <div id="buscar" class="panel-collapse collapse">
+          <div class="panel-body">
+          
+            <div class="form-group">
+              <label for="nombre">Nombre de usuario</label>
+              <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingresa el nombre">
+          </div>
+
+          <button type="button" id="buscar" data-loading-text="Buscando..." class="btn btn-success" autocomplete="off">
+            Buscar
+          </button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" href="#eliminar" aria-expanded="false">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Eliminar usuario</a>
+          </h4>
+        </div>
+
+        <div id="eliminar" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="nombre">Nombre de usuario</label>
+              <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingresa el nombre">
+          </div>
+
+          <button type="button" id="buscar" data-loading-text="Eliminando..." class="btn btn-danger" autocomplete="off">
+            Eliminar
+          </button>
+          </div>
+        </div>
+      </div>  
+
+    </div>
+
+  </div>
+  <div class="container" id="contenedor">
+
+    
+
+  </div>
+
+  
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+<script type="text/javascript">
+
+  $('#BotonGuardar').on('click', function () {
+      var $btn = $(this).button('loading');
+      
+
+      $.ajax({
+
+      type : "POST",  
+      url: "datos.php",
+      data: $('#formulario').serialize(),
+      success: function(data) {
+
+        var nombre = data;
+        var alerta = '<div class="alert alert-success" id="alerta">El usuario: <b> '+data+ ' </b> fue agregado correctamente.</div>';
+
+        $("#contenedor").html(alerta);
+
+        $btn.button('reset');
+
+        }
+
+      });
+
+  });
+
+</script>
+
+</body>
+</html>

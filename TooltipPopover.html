@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tooltip - Popover</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+  
+  
+  <div class="container">  
+
+    <h1>ToolTip - Popover</h1>
+    <br><br><br>
+
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip vista izquierda">Tooltip izquierda</button>
+       <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip vista inferior">Tooltip inferior</button>
+
+       <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip vista derecha">Tooltip derecha</button>
+    <br><br><br>
+    
+    <a href="#" data-toggle="tooltip" data-placement="top" title="buscar con google">Buscar</a>
+    
+    <br><br>
+    <a href="#" data-toggle="tooltip" id="ayuda" data-placement="right" title="¿Necesitas ayuda?">Ayuda</a>
+
+    <h3>Popover</h3>
+    <br><br><br>
+
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover izquierda
+  </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover superior
+</button>
+
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover inferior
+</button>
+
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover derecha
+</button>
+
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Título Popover" data-content="Aqui el contenido del popover puedes colocar textos más largos">
+  Mostrar popover</button>
+
+  <br><br>
+  <a href="#" data-toggle="popover" title="Título Popover" data-content="Aqui el contenido del popover puedes colocar textos más largos">Ayuda</a>
+
+  </div>
+
+  </div>
+
+  
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <script type="text/javascript">
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $('#ayuda').tooltip('show')
+
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+
+    })
+
+  </script>
+
+  
+</body>
+</html>

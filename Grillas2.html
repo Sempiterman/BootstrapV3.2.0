@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Grilla 2 - Mobile and desktop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+  
+  <div class="container">
+<!-- columnas en el móvil al hacer una columna de ancho completo y la otra mitad
+ de la anchura -->
+    <div class="row">
+        <div class="col-xs-12 col-md-8 well">.col-xs-12 .col-md-8</div>
+        <div class="col-xs-6 col-md-4 well">.col-xs-6 .col-md-4</div>
+    </div>
+
+<!-- Columnas comienzan en 50% de ancho en el móvil y se colocan con un 33,3% de ancho
+ en el escritorio -->
+    <div class="row">
+        <div class="col-xs-6 col-md-4 well">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4 well">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4 well">.col-xs-6 .col-md-4</div>
+    </div>
+
+<!-- Las columnas son siempre un 50% de ancho, en el móvil y de escritorio -->
+    <div class="row">
+        <div class="col-xs-6 well">.col-xs-6</div>
+        <div class="col-xs-6 well">.col-xs-6</div>
+    </div>
+    
+  </div>
+  
+
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+</body>
+</html>
